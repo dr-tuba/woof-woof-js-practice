@@ -23,9 +23,11 @@ function renderDogs(dog) {
     let dogNameInfo = document.createElement('h2')
     dogNameInfo.innerText = dog.name
     let dogButton = document.createElement('button')
+    let br = document.createElement('br')
 
     dogBar.append(dogName)
     dogInfoDiv.append(dogInfo)
+    dogInfoDiv.append(br)
     dogInfo.appendChild(dogImage)
     dogInfo.appendChild(dogNameInfo)
     dogInfo.appendChild(dogButton)
@@ -94,7 +96,7 @@ function filterDogs(e) {
     } else {
         e.target.textContent = `Filter good dogs: OFF`
         for (dog of goodDogs) {
-            dog.style.display = 'none'
+            dog.style.display = 'block'
         }
         for (dog of badDogs) {
             dog.style.display = 'block'
